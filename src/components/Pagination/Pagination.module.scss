@@ -1,0 +1,48 @@
+.title {
+	font-size: 14px;
+	line-height: 21px;
+	color: #B5B7C0;
+}
+
+.root {
+	position: relative;
+	display: flex;
+	justify-content: flex-end;
+	margin: 30px 40px 0px 0px;
+	li {
+		display: inline-block;
+
+		a {
+			text-align: center;
+			width: 25px;
+			height: 24px;
+			border: 1px solid #EEEEEE;
+			font-size: 12px;
+			border-radius: 4px;
+			margin-right: 10px;
+			cursor: pointer;
+			display: inline-block;
+			background: #F5F5F5;
+			border: 1px solid #EEEEEE;
+
+			&:hover {
+				background: #5932EA;
+				border: 1px solid #5932EA;
+				border-radius: 4px;
+			}
+
+		}
+
+	}
+
+	:global {
+		.selected {
+			a {
+				background: #5932EA;
+				border-radius: 4px;
+				color: #fff;
+			}
+		}
+	}
+
+}

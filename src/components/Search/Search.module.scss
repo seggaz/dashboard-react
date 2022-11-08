@@ -1,0 +1,41 @@
+.searchForm {
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+	margin: 50px;
+	max-height: 40px;
+
+	img {
+		position: absolute;
+		top: 7px;
+		right: 190px;
+	}
+
+	input {
+		padding: 11px 35px;
+		font-size: 12px;
+		line-height: 18px;
+		background:#f7f4fb;
+		border: none;
+		border-radius: 10px;
+	}
+
+	.formTitle {
+	
+		.titleHead {
+			font-weight: 600;
+			font-size: 22px;
+			line-height: 33px;
+			letter-spacing: -0.01em;
+		}
+
+		.titleActive {
+			font-weight: 400;
+			font-size: 14px;
+			line-height: 21px;
+			letter-spacing: -0.01em;
+			color: #16C098;
+		}
+		
+	}
+}
