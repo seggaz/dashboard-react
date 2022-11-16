@@ -11,11 +11,24 @@
 
 		li {
 			display: flex;
-			align-items: center;
+			justify-content: space-around;
+			align-items: baseline;
 			padding: 10px 20px;
 			border-bottom: 1px solid #EEEEEE;
 			span {
-				padding: 10px;
+				display: flex;
+				&:nth-child(1) {
+					flex: 0 0 20%;
+				}
+				&:nth-child(2) {
+					flex: 0 0 10%;
+				}
+				&:nth-child(3) {
+					flex: 0 0 40%;
+				}
+				&:nth-child(3) {
+					flex: 0 0 20%;
+				}
 			}
 			
 			.btnActive {

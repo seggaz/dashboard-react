@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import searchIcon from '../../assets/img/search 1.svg';
 import styles from './Search.module.scss';
 
-const Search = ({searchItem, setSearchItem}) => {
+const Search = () => {
+	const [searchItem, setSearchItem] = useState("");
 	
 	return (
     <form className={styles.searchForm} onSubmit={(e) => e.preventDefault()}>

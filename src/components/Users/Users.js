@@ -33,9 +33,9 @@ const Users = ({currentPage}) => {
 				{
 					users.map(user => (
 						<li
-							key={user.id}
+							key={user.id}git 
 						>
-							<span>{user.name}</span>
+							<span>{user.name}</span> 
 							<span>{user.company.name}</span>
 							<span>{user.phone}</span>
 							<span>{user.email}</span>

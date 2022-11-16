@@ -1,6 +1,6 @@
 import styles from './SideMenu.module.scss';
 import logo from '../../assets/img/dashboard.png';
-import ListMenu from '../LiistMenu/ListMenu';
+import NavMenu from '../NavMenu/NavMenu';
 
 const SideMenu = () => {
   return (
@@ -9,7 +9,7 @@ const SideMenu = () => {
 			<img src={logo} alt="logo" />
 			<span className={styles.logoVr}>v.01</span>
 		</div>
-		<ListMenu />
+		<NavMenu />
 	</div>
   )
 }
