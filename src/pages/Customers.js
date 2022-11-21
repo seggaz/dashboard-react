@@ -1,12 +1,10 @@
 import React from 'react';
 import Pagination from '../components/Pagination/Pagination';
-import Users from '../components/Users/Users';
-import UsersList from '../components/UsersList/UsersList';
+import Users from '../components/Users/UsersList';
 
 const Customers = ({currentPage, handlePageChange}) => {
 	return (
 		<div>
-			<UsersList />
 			<Users />
 			<Pagination 
 				currentPage={currentPage} 

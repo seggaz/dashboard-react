@@ -1,4 +1,12 @@
 .allUsers {
+	.userHead {
+	
+		display: flex;
+		justify-content: space-around;
+		border-bottom: 1px solid #EEEEEE;
+		padding-bottom: 14px;
+		color: #B5B7C0;
+}
 	
 	ul {
 		display: block;

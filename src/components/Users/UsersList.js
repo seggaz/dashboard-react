@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import styles from './Users.module.scss';
+import styles from './UsersList.module.scss';
 import axios from 'axios';
 
 
@@ -14,8 +14,10 @@ const Users = ({currentPage}) => {
 	useEffect(() => {
 		async function fetchUsers() {
 			try {
-				const {data} = await axios.get(`https://jsonplaceholder.typicode.com/users?_limit=8&_page=${currentPage}`);
-				setUsers(data)
+				const {data} = await axios.get(`https://dummyjson.com/users`);
+				console.log(data);
+				
+				setUsers(data.users)
 			} catch (error) {
 				alert('Error getting user!');
 			}
@@ -24,18 +26,27 @@ const Users = ({currentPage}) => {
 		fetchUsers();
 	}, []);
 		
-		if (!users) {
+		if (!users) { 
 			return <>'Загрузка...'</>;
 		}
+		console.log(users)
 	return (
 		<div className={styles.allUsers}>
+			<div className={styles.userHead}>
+				<div>Customer Name</div>
+				<div>Company</div>
+				<div>Phone Number</div>
+				<div>Email</div>
+				<div>Country</div>
+				<div>Status</div>
+		</div>
 			<ul> 
 				{
 					users.map(user => (
 						<li
-							key={user.id}git 
+							key={user.id}
 						>
-							<span>{user.name}</span> 
+							<span>{user.firstName}</span>
 							<span>{user.company.name}</span>
 							<span>{user.phone}</span>
 							<span>{user.email}</span>
