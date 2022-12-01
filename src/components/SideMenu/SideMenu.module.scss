@@ -3,15 +3,15 @@
 	flex-direction: column;
 	height: 100%;
 	background: #ffff;
-	border-radius: 20px 0px 0px 20px;
+	border-radius: 20px 0 0 20px;
 	box-shadow: -1px 4px 20px -15px rgba(0,0,0,0.75);
 
 	.logo {
 		position: relative;
-		margin: 36px 83px 0px 28px;
+		margin: 36px 83px 0 28px;
 	}
 
-	.logoVr {
+	.appVersion {
 		position: absolute;
 		top: 17px;
 		right: -20px;

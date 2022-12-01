@@ -23,11 +23,11 @@ ul {
 	display: grid;
 	grid-template-columns: 306px 1fr;
 	grid-template-rows: 1fr;
-	grid-column-gap: 0px;
-	grid-row-gap: 0px;
+	grid-column-gap: 0;
+	grid-row-gap: 0;
 	width: 1440px;
 	height: 1198px;
-	margin: 10px 0px 10px 0px;
+	margin: 10px 0 10px 0;
 	background:#f7f4fb;
 	border-radius: 20px;
 	box-shadow: -1px 4px 32px -15px rgba(0,0,0,0.75);

@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+
 import Pagination from '../components/Pagination/Pagination';
 import Search from '../components/Search/Search';
 import Users from '../components/Users/UsersList';
@@ -16,10 +17,6 @@ const Customers = ({currentPage, handlePageChange}) => {
 				
 	}
 
-
-
-	
-	
 	return (
 		<div>
 			<Search 

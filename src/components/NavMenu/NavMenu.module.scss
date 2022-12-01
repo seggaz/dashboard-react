@@ -4,28 +4,28 @@
 	margin-right: 25px;
 	margin-top: 65px;
 	position: relative;
-	 a {
-		margin-left: 40px;
-		padding: 5px 50px;
-		color: #9197B3;
-		text-decoration: none;
-	}
+
 
 	.navLink {
 		margin-top: 30px;
-		padding: 5px 0px 5px 5px;
+		padding: 5px 0 5px 5px;
 		position: relative;
+		a {
+			margin-left: 40px;
+			padding: 5px 50px;
+			color: #9197B3;
+			text-decoration: none;
+			&[class="active"] {
+				color: #fff;
+				background: #5932EA;
+				border-radius: 10px;
+				path {
+					stroke: #fff;
+				}
+			}
+		}
 
 	}
-
-	.activeLink {
-		color: #fff;
-		background: #5932EA;
-		border-radius: 10px;
-		text-decoration: none;
-	}
-
-
 
 	svg {
 		position: absolute;

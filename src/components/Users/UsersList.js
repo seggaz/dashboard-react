@@ -1,11 +1,10 @@
-import React from 'react';
 import styles from './UsersList.module.scss';
-
 
 const Users = ({users}) => {
 	if (!users) { 
 			return <>'Загрузка...'</>;
-		}
+	}
+
 	return (
 		<div className={styles.allUsers}>
 			<div className={styles.userHead}>
