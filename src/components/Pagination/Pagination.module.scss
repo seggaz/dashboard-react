@@ -8,7 +8,7 @@
 	position: relative;
 	display: flex;
 	justify-content: flex-end;
-	margin: 30px 40px 0px 0px;
+	margin: 30px 40px 0 0;
 	li {
 		display: inline-block;
 
@@ -16,7 +16,6 @@
 			text-align: center;
 			width: 25px;
 			height: 24px;
-			border: 1px solid #EEEEEE;
 			font-size: 12px;
 			border-radius: 4px;
 			margin-right: 10px;
