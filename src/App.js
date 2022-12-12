@@ -16,7 +16,7 @@ function App() {
 		<SideMenu />
 			<div className={styles.mainBoard}>
 			<Routes>
-			<Route path="/customers" element={<Customers />} />
+			<Route path="*" element={<Customers />} />
 			<Route path="/dashboard" element={<Dashboard />} />
 			<Route path="/product" element={<Product />} />
 			<Route path="/income" element={<Income />} />

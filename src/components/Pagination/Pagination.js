@@ -1,28 +1,32 @@
-import React, { useState } from 'react';
-import ReactPaginate from 'react-paginate';
-
 import styles from './Pagination.module.scss';
 
+const Pagination = ({usersPerPage, totalUsers, paginate, currentPage}) => {
+	const pageNumbers = []
 
-const Pagination = () => {
-	const [currentPage, setCurrentPage] = useState(1);
+	for (let i = 1; i < Math.ceil(totalUsers / usersPerPage); i++) {
+		pageNumbers.push(i)
+	}
 
-	const handlePageChange = (pageIndex) => {
-		setCurrentPage(pageIndex);
-	};
 	return (
-	<ReactPaginate
-      className={styles.root}
-      breakLabel="..."
-      nextLabel=">"
-	  previousLabel="<"
-      onPageChange={(e) => handlePageChange(e.selected + 1)}
-      pageRangeDisplayed={4}
-      pageCount={4}
-      forcePage={currentPage - 1}
-    />
-	
-  );
+		<div>
+			<ul className={styles.root}>
+				{
+					pageNumbers.map(number => (
+						<li 
+							className={styles.active}
+							key={number}
+							>
+							<a href="!#"
+								onClick={() => paginate(number)}
+								>
+									{number}
+								</a>				
+						</li>
+					))
+				}
+			</ul>
+		</div>
+  )
 };
 
 export default Pagination;

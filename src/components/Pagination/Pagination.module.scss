@@ -7,13 +7,13 @@
 .root {
 	position: relative;
 	display: flex;
-	justify-content: flex-end;
-	margin: 30px 40px 0px 0px;
+	margin: 30px 40px 0px 50px;
 	li {
 		display: inline-block;
 
 		a {
 			text-align: center;
+			text-decoration: none;
 			width: 25px;
 			height: 24px;
 			border: 1px solid #EEEEEE;
@@ -29,20 +29,17 @@
 				background: #5932EA;
 				border: 1px solid #5932EA;
 				border-radius: 4px;
-			}
-
-		}
-
-	}
-
-	:global {
-		.selected {
-			a {
-				background: #5932EA;
-				border-radius: 4px;
 				color: #fff;
 			}
+
+			&:active {
+				background: #5932EA;
+				color: #fff;
+			}
+
 		}
+
 	}
+
 
 }

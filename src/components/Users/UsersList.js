@@ -2,8 +2,8 @@ import React from 'react';
 import styles from './UsersList.module.scss';
 
 
-const Users = ({users}) => {
-	if (!users) { 
+const Users = ({users, loading}) => {
+	if (loading) { 
 			return <>'Загрузка...'</>;
 		}
 	return (
@@ -18,12 +18,12 @@ const Users = ({users}) => {
 		</div>
 			<ul> 
 				{
-					users.map(user => (
+					users.map((user, i) => (
 						<li
-							key={user.id}
+							key={i}
 						>
 							<span>{user.firstName}</span>
-							<span>{user.company.name}</span>
+							<span>{user.domain}</span>
 							<span>{user.phone}</span>
 							<span>{user.email}</span>
 							<span>{user.address.city}</span>
