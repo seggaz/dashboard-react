@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './UsersList.module.scss';
 
 
-const Users = ({users, loading}) => {
+const Users = ({users, loading, removeUsers, searchText}) => {
 	if (loading) { 
 			return <>'Загрузка...'</>;
 		}
@@ -18,7 +18,13 @@ const Users = ({users, loading}) => {
 		</div>
 			<ul> 
 				{
-					users.map((user, i) => (
+					users
+					.filter((user) => {
+						return searchText.toLowerCase() === ''
+						? user
+						: user.firstName.toLowerCase().includes(searchText)
+					})
+					.map((user, i) => (
 						<li
 							key={i}
 						>
@@ -29,8 +35,9 @@ const Users = ({users, loading}) => {
 							<span>{user.address.city}</span>
 							<button 
 								className={styles.btnInactive} 
+								onClick={removeUsers}
 								>
-								Active
+								Delete
 							</button>
 						</li>
 					))

@@ -1,31 +1,28 @@
 import styles from './Pagination.module.scss';
 
-const Pagination = ({usersPerPage, totalUsers, paginate, currentPage}) => {
+const Pagination = ({usersPerPage, totalUsers, currentPage, paginate}) => {
 	const pageNumbers = []
 
-	for (let i = 1; i < Math.ceil(totalUsers / usersPerPage); i++) {
+	for (let i = 1; i <= Math.ceil(totalUsers / usersPerPage); i++) {
 		pageNumbers.push(i)
 	}
 
 	return (
-		<div>
-			<ul className={styles.root}>
+			<div className={styles.root}>
+				
 				{
-					pageNumbers.map(number => (
-						<li 
-							className={styles.active}
-							key={number}
-							>
-							<a href="!#"
-								onClick={() => paginate(number)}
-								>
-									{number}
-								</a>				
-						</li>
+					pageNumbers.map((number, i) => (
+						<button 
+							key={i}
+							onClick={() => paginate(number)}
+							className={number === currentPage ? styles.active : ''} 
+						>
+							{number}
+											
+						</button>
 					))
 				}
-			</ul>
-		</div>
+			</div>
   )
 };
 

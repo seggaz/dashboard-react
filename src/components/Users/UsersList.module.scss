@@ -25,28 +25,19 @@
 			span {
 				display: flex;
 				&:nth-child(1) {
-					flex: 0 0 20%;
+					flex: 0 0 15%;
 				}
 				&:nth-child(2) {
-					flex: 0 0 10%;
+					flex: 0 0 15%;
 				}
 				&:nth-child(3) {
-					flex: 0 0 20%;
+					flex: 0 0 10%;
 				}
 				&:nth-child(3) {
 					flex: 0 0 20%;
 				}
 			}
 			
-			.btnActive {
-				width: 80px;
-				height: 29px;
-				background: rgba(22, 192, 152, 0.38);
-				border: 1px solid #00B087;
-				color: #008767;
-				border-radius: 4px;
-			}
-
 			.btnInactive {
 				width: 80px;
 				height: 29px;
@@ -54,6 +45,11 @@
 				border: 1px solid #DF0404;
 				color: #DF0404;
 				border-radius: 4px;
+				&:hover {
+					cursor: pointer;
+					background:#DF0404;
+					color: #fff;
+				}
 			}
 		}
 	}

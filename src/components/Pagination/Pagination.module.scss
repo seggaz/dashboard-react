@@ -8,10 +8,9 @@
 	position: relative;
 	display: flex;
 	margin: 30px 40px 0px 50px;
-	li {
-		display: inline-block;
+	
 
-		a {
+		button {
 			text-align: center;
 			text-decoration: none;
 			width: 25px;
@@ -32,14 +31,14 @@
 				color: #fff;
 			}
 
-			&:active {
+			&.active {
 				background: #5932EA;
 				color: #fff;
 			}
 
 		}
 
-	}
+	
 
 
 }

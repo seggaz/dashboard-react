@@ -13,53 +13,73 @@ const Customers = () => {
   const [usersPerPage] = useState(8);
 
   useEffect(() => {
-	const getUsers = async () => {
-		setLoading(true)
-		const res = await axios.get('https://dummyjson.com/users/')
-		setUsers(res.data.users)
-		setLoading(false)
-	}
-	getUsers()
-  }, [])
+    const getUsers = async () => {
+      setLoading(true);
+      const res = await axios.get('https://dummyjson.com/users');
+      setUsers(res.data.users);
+      setLoading(false);
+    };
+    getUsers();
+  }, []);
 
-  const lastUserIndex = currentPage * usersPerPage
-  const firstUserIndex = lastUserIndex - usersPerPage
-  const currentUser = users.slice(firstUserIndex, lastUserIndex)
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const nextPage = () => setCurrentPage((prev) => prev + 1);
+  const prevPage = () => setCurrentPage((prev) => prev - 1);
 
+  const lastUserIndex = currentPage * usersPerPage;
+  const firstUserIndex = lastUserIndex - usersPerPage;
+  const currentUser = users.slice(firstUserIndex, lastUserIndex);
 
-  const paginate = pageNumber => setCurrentPage(pageNumber)
-  const nextPage = () => setCurrentPage(prev => prev + 1)
-  const prevPage = () => setCurrentPage(prev => prev - 1)
+//   const filterUsers = () => {
+// 	 (currentUser.filter((user) => {
+// 		return searchText.toLowerCase() === ""
+// 		? user
+// 		: user.firstName.toLowerCase().includes(searchText)
+// 	}))
+//   };
 
-  const handleSearch = (value) => {
-    const searchValue = users.filter((user) => (user.firstName.length <= 3 ? value : ''));
-    setSearchText(searchValue);
-    console.log(value);
+//   const handleSearch = () => {
+// 	setUsers(filterUsers)
+//   }
+
+  const removeUsers = (clearUser) => {
+    const newTasks = [...users];
+    newTasks.splice(clearUser, 1);
+    setUsers(newTasks);
   };
 
-
   return (
-    <div>
+    <div style={{ height: '100%' }}>
       <Search 
-	    searchItem={searchText} 
-		setSearchItem={setSearchText} 
-		handleSearch={handleSearch}
-		/>
+	  	searchText={searchText}
+		setSearchText={setSearchText}
+	/>
+      <Users
+	  	searchText={searchText}
+        users={currentUser}
+        removeUsers={removeUsers}
+        loading={loading}
+      />
 
-      <Users 
-	  	users={currentUser} l
-		loading={loading}
-	   />
+      <Pagination
+        usersPerPage={usersPerPage}
+        totalUsers={users.length}
+        paginate={paginate}
+        currentPage={currentPage}
+      />
 
-      <Pagination usersPerPage={usersPerPage} totalUsers={users.length} paginate={paginate} />
-      <div className={styles.buttons}>
-        <button className={styles.prevPage} onClick={prevPage}>
-          &laquo;
-        </button>
-        <button className={styles.nextPage} onClick={nextPage}>
-          &raquo;
-        </button>
-      </div>
+      {currentUser.length === 0 ? (
+        <div className={styles.notFound}>Users not found!</div>
+      ) : (
+        <div className={styles.buttons}>
+          <button className={styles.prevPage} onClick={prevPage}>
+            &laquo;
+          </button>
+          <button className={styles.nextPage} onClick={nextPage}>
+            &raquo;
+          </button>
+        </div>
+      )}
     </div>
   );
 };
