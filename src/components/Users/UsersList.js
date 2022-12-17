@@ -19,11 +19,11 @@ const Users = ({users, loading, removeUsers, searchText}) => {
 			<ul> 
 				{
 					users
-					.filter((user) => {
-						return searchText.toLowerCase() === ''
-						? user
-						: user.firstName.toLowerCase().includes(searchText)
-					})
+					// .filter((user) => {
+					// 	return searchText.toLowerCase() === ''
+					// 	? user
+					// 	: user.firstName.toLowerCase().includes(searchText)
+					// })
 					.map((user, i) => (
 						<li
 							key={i}

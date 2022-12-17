@@ -54,9 +54,9 @@ const Customers = () => {
 	  	searchText={searchText}
 		setSearchText={setSearchText}
 	/>
-      <Users
-	  	searchText={searchText}
-        users={currentUser}
+      <Users 
+	  	// searchText={searchText}
+        users={currentUser.filter((user) => (user.firstName).toLowerCase().includes(searchText.toLowerCase()))}
         removeUsers={removeUsers}
         loading={loading}
       />
