@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
 import searchIcon from '../../assets/img/search 1.svg';
 import styles from './Search.module.scss';
 
-const Search = () => {
-	const [searchItem, setSearchItem] = useState("");
+const Search = ({setSearchText, searchText}) => {
 	
 	return (
     <form className={styles.searchForm} onSubmit={(e) => e.preventDefault()}>
@@ -17,8 +15,8 @@ const Search = () => {
         id="search"
         placeholder="Search"
         role="searchbox"
-        value={searchItem}
-        onChange={(e) => setSearchItem(e.target.value)}
+        value={searchText}
+        onChange={(e) => setSearchText(e.target.value)}
       />
     </form>
   );

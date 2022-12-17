@@ -2,7 +2,7 @@ import React from 'react';
 
 const Income = () => {
 	return (
-		<div style={{textAlign: "center", fontSize: "30px"}}>
+		<div style={{textAlign: "center", fontSize: "30px", height: "100vh"}}>
 			Income
 		</div>
 	);

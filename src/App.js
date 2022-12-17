@@ -9,18 +9,14 @@ import Income from './pages/Income';
 import Product from './pages/Product';
 import Promote from './pages/Promote';
 
-function App({searchItem, setSearchItem}) {
+function App() {
   return (
     <div className={styles.App}>
 		<div className={styles.wrapper}>
 		<SideMenu />
 			<div className={styles.mainBoard}>
-				<Search 
-					searchItem={searchItem}
-					setSearchItem={setSearchItem}				
-				/>
 			<Routes>
-			<Route path="/customers" element={<Customers />} />
+			<Route path="*" element={<Customers />} />
 			<Route path="/dashboard" element={<Dashboard />} />
 			<Route path="/product" element={<Product />} />
 			<Route path="/income" element={<Income />} />

@@ -1,0 +1,41 @@
+.buttons {
+	position: relative;
+
+	.prevPage {
+		position: absolute;
+		top: -24px;
+		left: 18px;
+		width: 25px;
+		height: 24px;
+		border: none;
+		cursor: pointer;
+		border-radius: 4px;
+	}
+	.nextPage {
+		position: absolute;
+		left: 185px;
+		top: -24px;
+		width: 25px;
+		height: 24px;
+		border: none;
+		cursor: pointer;
+		border-radius: 4px;
+	}
+	.prevPage:hover {
+		background: #5932EA;
+		border: 1px solid #5932EA;
+		border-radius: 4px;
+		color: #fff;
+	}
+	.nextPage:hover {
+		background: #5932EA;
+		border: 1px solid #5932EA;
+		border-radius: 4px;
+		color: #fff;
+	}
+}
+
+.notFound {
+	text-align: center;
+	font-size: 35px;
+}
